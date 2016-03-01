@@ -1,0 +1,35 @@
+{
+    "name": "silinternational/idp-pw-api-personnel-insite",
+    "description": "IdP Password Management personnel component for Insite",
+    "type": "library",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Bagwell",
+            "email": "steve_bagwell@sil.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sil\\IdpPw\\Common\\Personnel\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://bitbucket.org/silintl/insite-people-search.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "forevermatt/calc-api-sig": "dev-master",
+        "silintl/insite-people-search": "dev-master",
+        "silinternational/idp-pw-api-common": "dev-master",
+        "yiisoft/yii2": "*" ,
+        "roave/security-advisories": "dev-master"  
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    }
+}
