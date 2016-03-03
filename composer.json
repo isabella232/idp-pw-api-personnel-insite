@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "forevermatt/calc-api-sig": "dev-master",
+        "forevermatt/calc-api-sig": "^0.1.1",
         "silintl/insite-people-search": "dev-master",
         "silinternational/idp-pw-api-common": "dev-master",
         "yiisoft/yii2": "*" ,
