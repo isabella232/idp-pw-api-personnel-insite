@@ -1,5 +1,4 @@
 <?php
-
 namespace Sil\IdpPw\Common\Personnel;
 
 use silintl\InsitePeopleSearch\InsitePeopleSearch as IPSearch;
@@ -103,7 +102,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $employeeId
      * @return PersonnelUser
      */
     public function findByEmployeeId($employeeId)
@@ -116,7 +115,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $username
      * @return PersonnelUser
      */
     public function findByUsername($username)
@@ -129,7 +128,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $email
      * @return PersonnelUser
      */
     public function findByEmail($email)
