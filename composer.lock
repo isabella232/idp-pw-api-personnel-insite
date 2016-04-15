@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "791086f454d266f58d3d25ec74680ff6",
-    "content-hash": "b407c13ec84606f7ad8093ceb6293ec6",
+    "hash": "97412928feab2701fab13128543316d4",
+    "content-hash": "5e9456cd2db6fe21f00416432791e8fb",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -251,7 +251,7 @@
         },
         {
             "name": "forevermatt/calc-api-sig",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/forevermatt/calc-api-sig.git",
@@ -639,20 +639,20 @@
         },
         {
             "name": "silintl/insite-people-search",
-            "version": "dev-master",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/silintl/insite-people-search.git",
-                "reference": "527dd18576359c728bec6bda77dac9cba7931f54"
+                "reference": "8918ba96ec456151d6596b59a73ddd25b8170119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/silintl/insite-people-search/get/527dd18576359c728bec6bda77dac9cba7931f54.zip",
-                "reference": "527dd18576359c728bec6bda77dac9cba7931f54",
+                "url": "https://bitbucket.org/silintl/insite-people-search/get/8918ba96ec456151d6596b59a73ddd25b8170119.zip",
+                "reference": "8918ba96ec456151d6596b59a73ddd25b8170119",
                 "shasum": ""
             },
             "require": {
-                "forevermatt/calc-api-sig": "dev-master",
+                "forevermatt/calc-api-sig": "^0.1.1",
                 "guzzlehttp/guzzle": "5.2.0",
                 "php": ">=5.4.0"
             },
@@ -665,7 +665,7 @@
                     "silintl\\InsitePeopleSearch\\": "src/"
                 }
             },
-            "time": "2015-05-14 17:53:19"
+            "time": "2016-03-03 17:59:15"
         },
         {
             "name": "yiisoft/yii2",
@@ -1552,8 +1552,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "forevermatt/calc-api-sig": 20,
-        "silintl/insite-people-search": 20,
         "silinternational/idp-pw-api-common": 20,
         "roave/security-advisories": 20
     },
