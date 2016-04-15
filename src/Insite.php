@@ -1,8 +1,7 @@
 <?php
-
 namespace Sil\IdpPw\Common\Personnel;
 
-use silintl\InsitePeopleSearch as IPSearch;
+use silintl\InsitePeopleSearch\InsitePeopleSearch as IPSearch;
 use Sil\IdpPw\Common\Personnel\PersonnelInterface;
 use Sil\IdpPw\Common\Personnel\PersonnelUser;
 use Sil\IdpPw\Common\Personnel\NotFoundException;
@@ -52,7 +51,7 @@ class Insite extends Component implements PersonnelInterface
         
         if (is_string($this->insitePeopleSearchApiSecret) &&
               $this->insitePeopleSearchApiSecret) {
-            $config['api_secret'] = $this->insitePeopleSearchApiKey;
+            $config['api_secret'] = $this->insitePeopleSearchApiSecret;
         } else {
             throw new \Exception("Invalid API Secret for the Insite People Search. " . 
                                  " A non-empty string is required.", 1456781491);
@@ -103,7 +102,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $employeeId
      * @return PersonnelUser
      */
     public function findByEmployeeId($employeeId)
@@ -116,7 +115,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $username
      * @return PersonnelUser
      */
     public function findByUsername($username)
@@ -129,7 +128,7 @@ class Insite extends Component implements PersonnelInterface
     }
   
     /**
-     * @param mixed $employeeId
+     * @param string $email
      * @return PersonnelUser
      */
     public function findByEmail($email)
