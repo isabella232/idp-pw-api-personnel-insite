@@ -95,8 +95,8 @@ class Insite extends Component implements PersonnelInterface
         $pUser->email = $userData['email'];
         $pUser->employeeId = $userData['giseispersonid'];
         $pUser->username = $userData['username'];
-        $pUser->supervisorEmail = $userData['manager_email'];
-        $pUser->spouseEmail = $userData['spouse_email'];
+        $pUser->supervisorEmail = isset($userData['manager_email']) ? $userData['manager_email'] : null;
+        $pUser->spouseEmail = isset($userData['spouse_email']) ? $userData['spouse_email'] : null;
         
         return $pUser;      
     }
