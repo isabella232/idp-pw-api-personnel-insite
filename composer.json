@@ -23,8 +23,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "fillup/fake-bower-assets": "*",
         "forevermatt/calc-api-sig": "^0.1.1",
-        "silintl/insite-people-search": "^0.0.1",
+        "silintl/insite-people-search": "^0.0.2",
         "silinternational/idp-pw-api-common": "dev-master",
         "yiisoft/yii2": "*" ,
         "roave/security-advisories": "dev-master"  
