@@ -76,6 +76,7 @@ class Insite extends Component implements PersonnelInterface
      * @param array $query
      * @return PersonnelUser
      * @throws NotFoundException
+     * @throws \Exception
      */  
     private function findByQuery($query) 
     {
@@ -88,17 +89,39 @@ class Insite extends Component implements PersonnelInterface
         }
         
         $userData = $results[0]['items'][0];
-        
-        $pUser = new PersonnelUser();
-        $pUser->firstName = $userData['first_name'];
-        $pUser->lastName = $userData['last_name'];
-        $pUser->email = $userData['email'];
-        $pUser->employeeId = $userData['giseispersonid'];
-        $pUser->username = $userData['username'];
-        $pUser->supervisorEmail = isset($userData['manager_email']) ? $userData['manager_email'] : null;
-        $pUser->spouseEmail = isset($userData['spouse_email']) ? $userData['spouse_email'] : null;
-        
-        return $pUser;      
+
+        try {
+            $this->assertRequiredAttributesPresent($userData);
+            $pUser = new PersonnelUser();
+            $pUser->firstName = $userData['first_name'];
+            $pUser->lastName = $userData['last_name'];
+            $pUser->email = $userData['email'];
+            $pUser->employeeId = $userData['giseispersonid'];
+            $pUser->username = $userData['username'];
+            $pUser->supervisorEmail = isset($userData['manager_email']) ? $userData['manager_email'] : null;
+            $pUser->spouseEmail = isset($userData['spouse_email']) ? $userData['spouse_email'] : null;
+
+            return $pUser;
+        } catch (\Exception $e) {
+            throw new \Exception(
+                $e->getMessage() . ' for query: ' . $this->getQueryAsString($query),
+                1472567249
+            );
+        }
+    }
+
+    private function assertRequiredAttributesPresent($userData)
+    {
+        $required = ['first_name', 'last_name', 'email', 'giseispersonid', 'username'];
+
+        foreach ($required as $requiredAttr) {
+            if ( ! array_key_exists($requiredAttr, $userData)) {
+                throw new \Exception(
+                    'Personnel attributes missing attribute: ' . $requiredAttr,
+                    1472567011
+                );
+            }
+        }
     }
   
     /**
@@ -138,5 +161,19 @@ class Insite extends Component implements PersonnelInterface
         ];
         
         return $this->findByQuery($query);        
+    }
+
+    /**
+     * Convert query array to simple string
+     * @param array $query
+     * @return string
+     */
+    public function getQueryAsString($query)
+    {
+        $string = '';
+        foreach ($query as $key => $value) {
+            $string .= $key . '=' . $value;
+        }
+        return $string;
     }
 }
