@@ -2,9 +2,9 @@
 namespace Sil\IdpPw\Common\Personnel;
 
 use silintl\InsitePeopleSearch\InsitePeopleSearch as IPSearch;
+use Sil\IdpPw\Common\Personnel\NotFoundException;
 use Sil\IdpPw\Common\Personnel\PersonnelInterface;
 use Sil\IdpPw\Common\Personnel\PersonnelUser;
-use Sil\IdpPw\Common\Personnel\NotFoundException;
 use yii\base\Component;
 
 class Insite extends Component implements PersonnelInterface
@@ -83,11 +83,19 @@ class Insite extends Component implements PersonnelInterface
       
         $config = $this->getInsiteApiConfig();
         $results = $this->callAdvancedSearch($query, $config);
-        
-        if ( ! $results[0]['items']) {
+
+        /*
+         * Make sure only one result was found, otherwise throw exception
+         */
+        if ( ! isset($results[0]['items']) || ! is_array($results[0]['items']) || count($results[0]['items']) === 0) {
             throw new NotFoundException();
+        } elseif (count($results[0]['items']) > 1) {
+            throw new \Exception(
+                'More than one personnel record found for query ' . $this->getQueryAsString($query),
+                1472754578
+            );
         }
-        
+
         $userData = $results[0]['items'][0];
 
         try {
