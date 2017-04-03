@@ -26,7 +26,7 @@
         "fillup/fake-bower-assets": "*",
         "forevermatt/calc-api-sig": "^0.1.1",
         "silintl/insite-people-search": "^0.0.2",
-        "silinternational/idp-pw-api-common": "dev-master",
+        "silinternational/idp-pw-api-common": "^1.0",
         "yiisoft/yii2": "*" ,
         "roave/security-advisories": "dev-master"  
     },
