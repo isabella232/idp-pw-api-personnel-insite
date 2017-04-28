@@ -25,7 +25,7 @@
         "php": ">=5.4.0",
         "fillup/fake-bower-assets": "*",
         "forevermatt/calc-api-sig": "^0.1.1",
-        "silintl/insite-people-search": "dev-develop",
+        "silintl/insite-people-search": "^1.0",
         "silinternational/idp-pw-api-common": "^1.0",
         "yiisoft/yii2": "*" ,
         "roave/security-advisories": "dev-master"  

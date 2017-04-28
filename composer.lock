@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf6faf195d3b7d571b0059676e7998ef",
+    "content-hash": "8b73f88a5d6e58468924e2b813b0a82f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -588,7 +588,7 @@
         },
         {
             "name": "silintl/insite-people-search",
-            "version": "dev-develop",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/silintl/insite-people-search.git",
@@ -619,7 +619,7 @@
             "support": {
                 "source": "https://bitbucket.org/silintl/insite-people-search/src/24deb15612d880c393d02c898e6ab0ddf23985dc/?at=develop"
             },
-            "time": "2017-04-28 19:08:24"
+            "time": "2017-04-28T19:08:24+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1524,7 +1524,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "silintl/insite-people-search": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
