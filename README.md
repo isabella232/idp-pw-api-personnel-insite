@@ -1,3 +1,5 @@
+# ARCHIVED: This library is no longer maintained.
+
 # idp-pw-api-personnel-insite
 IdP Password Management personnel component for Insite 
 
